@@ -67,7 +67,7 @@
             <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="100">${Flexible Thinking}</p>
             <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="150">${Creative thinking}</p>
             <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="200">${Communication skills}</p>
-            <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="250">${roblem-solving skills}</p>
+            <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="250">${Problem-solving skills}</p>
           </div>
         </div>
       </div>
