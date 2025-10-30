@@ -50,14 +50,7 @@
     <div class="page main-page">
       <div class="intro-sec pos-r">
         <div class="intro-bg img img-con">
-          <video
-            class="intro-video img-cov"
-            src="@/assets/images/video/video_intro_bg.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
+          <img src="@/assets/images/intro_bg_blurred.png" alt="인트로 배경경 이미지" class="intro-video img-cov" />
         </div>
         <div class="intro-txt-grp">
           <p class="intro-title f-wh" data-aos="fade-up">
@@ -65,10 +58,10 @@
           </p>
 
           <div class="intro-sub-txt-grp flex">
-            <p class="intro-sub-txt">${Flexible Thinking}</p>
-            <p class="intro-sub-txt">${Creative thinking}</p>
-            <p class="intro-sub-txt">${Communication skills}</p>
-            <p class="intro-sub-txt">${roblem-solving skills}</p>
+            <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="100">${Flexible Thinking}</p>
+            <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="150">${Creative thinking}</p>
+            <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="200">${Communication skills}</p>
+            <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="250">${roblem-solving skills}</p>
           </div>
         </div>
       </div>
@@ -266,11 +259,11 @@
             >
           </div>
           <div class="contact-list-grp flex items-c">
-            <div class="contact-list" data-aos="fade-up">
+            <div class="contact-list">
               <p class="label f-pop">Email:</p>
               <p class="contact f-pop">hji0530kim@gmail.com</p>
             </div>
-            <div class="contact-list" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-list">
               <p class="label f-pop">Phone</p>
               <p class="contact f-pop">010-8388-9721</p>
             </div>
