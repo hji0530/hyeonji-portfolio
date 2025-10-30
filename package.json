@@ -1,9 +1,9 @@
 {
-  "name": "@hji0530/portfolio_vue",
+  "name": "@hji0530/hyeonji-portfolio",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hji0530/portfolio_vue.git"
+    "url": "https://github.com/hji0530/hyeonji-portfolio.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
