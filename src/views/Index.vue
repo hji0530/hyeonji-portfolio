@@ -250,11 +250,20 @@
       <!-- CONTACT -->
       <div class="contact-sec">
         <div class="xl-center">
-          <p class="top-title f-bk f-b f-pop" data-aos="fade-up">Contact</p>
-          <p class="sub-txt f-bk f-r" data-aos="fade-up" data-aos-delay="100">
-            끝까지 저의 포트폴리오를 관심있게 봐주셔서 감사합니다.<br />
-            저와 나누고 싶으신 말씀이 있으시다면 언제든 연락 주세요!
-          </p>
+          <div class="contact-top-grp flex">
+            <div class="left" data-aos="fade-up">
+              <div class="contact-img-grp pos-r">
+                <img src="@/assets/images/khj_img.jpg" alt="img" class="img img-con" />
+              </div>
+            </div>
+            <div class="right" data-aos="fade-up" data-aos-delay="100">
+              <p class="top-title f-bk f-b f-pop">Contact</p>
+              <p class="sub-txt f-bk f-r">
+                끝까지 저의 포트폴리오를 관심있게 봐주셔서 감사합니다.<br />
+                저와 나누고 싶으신 말씀이 있으시다면 언제든 연락 주세요!
+              </p>
+            </div>
+          </div>
           <div class="resume-grp">
             <div class="line"></div>
             <a
