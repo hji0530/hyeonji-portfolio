@@ -220,7 +220,7 @@
 @keyframes horizontal-scroll {
   0% {
     opacity: 0;
-    transform: translateX(-30%);
+    transform: translateX(-15%);
   }
 
   40% {
@@ -230,7 +230,7 @@
 
   100% {
     opacity: 0.3;
-    transform: translateX(30%);
+    transform: translateX(15%);
   }
 }
 

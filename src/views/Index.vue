@@ -61,8 +61,15 @@
         </div>
         <div class="intro-txt-grp">
           <p class="intro-title f-wh" data-aos="fade-up">
-            <span class="highlight">변화하는 웹 퍼블리셔 김현지</span>입니다.
+            완성도를 책임지는 <br class="tab-show" /><span class="highlight">웹 퍼블리셔 김현지</span>입니다.
           </p>
+
+          <div class="intro-sub-txt-grp flex">
+            <p class="intro-sub-txt">${Flexible Thinking}</p>
+            <p class="intro-sub-txt">${Creative thinking}</p>
+            <p class="intro-sub-txt">${Communication skills}</p>
+            <p class="intro-sub-txt">${roblem-solving skills}</p>
+          </div>
         </div>
       </div>
 
@@ -113,7 +120,7 @@
         <div class="work-inner-grp l-center">
           <p class="top-title f-bk f-b f-pop f-center" data-aos="fade-up">Work</p>
           <div class="work-list-grp" data-aos="fade-up">
-            <div class="work-card" v-for="item in projects" :key="item.title">
+            <div class="work-card pos-r" v-for="item in projects" :key="item.title">
               <div class="work-thumb">
                 <img :src="item.thumb" :alt="item.title" />
               </div>
@@ -272,11 +279,15 @@
       </div>
 
       <div class="resume-sec tab-show pos-r">
-        <div class="xl-center">
-          <p class="resume-sub-txt f-wh f-r">RESUME DOWNLOAD</p>
-          <p class="resume-title f-wh f-b">이력서 다운로드</p>
-          <button class="btn btn-resume-arrow"><i class="icon icon-arrow-corner-right"></i></button>
-        </div>
+        <a :href="resumeUrl" download="김현지_웹퍼블리셔_이력서.pdf" class="resume-download-grp">
+          <div class="xl-center">
+            <p class="resume-sub-txt f-wh f-r f-pop">RESUME DOWNLOAD</p>
+            <p class="resume-title f-wh f-b">이력서 다운로드</p>
+            <div class="btn btn-resume-arrow">
+              <i class="icon icon-arrow-right-big scroll-horizontal-img"></i>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -288,6 +299,7 @@ import thumbPossol from '@/assets/images/work/possol.png';
 import thumbPrabbit from '@/assets/images/work/prabbit.png';
 import thumbPocket from '@/assets/images/work/pocket.png';
 import thumbPortfolio from '@/assets/images/work/portfolio.png';
+import thumbCrm from '@/assets/images/work/crm.png';
 
 export default {
   name: 'Index',
@@ -304,11 +316,11 @@ export default {
 
       projects: [
         {
-          title: '자사 홈페이지 Website (Vue3 + Nuxt 전환)',
+          title: '자사 Website (Vue3 + Nuxt 전환)',
           stack: 'Vue3, Nuxt, SCSS, HTML',
           desc: [
             'Vue2 기반 홈페이지를 Vue3 + Nuxt로 마이그레이션하며 SCSS 퍼블 구조 세팅 및 컴포넌트 정리 담당',
-            '웨비나, 성공사례 등 신규 페이지 추가 및 리뉴얼 퍼블리싱 전담',
+            '신규 페이지 추가 및 리뉴얼 퍼블리싱 전담',
           ],
           url: 'https://xn--9i1b674cwc38r6pa.com/',
           thumb: thumbPocket,
@@ -358,7 +370,7 @@ export default {
             '자료실, 단체 메일 전송, 웨비나 등 신규 페이지 퍼블리싱',
             '프론트엔드 개발자와 GitLab 협업 진행',
           ],
-          thumb: '',
+          thumb: thumbCrm,
         },
       ],
     };

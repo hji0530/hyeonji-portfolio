@@ -65,10 +65,13 @@
   width: 100%;
   min-height: 100vh;
   background: #000;
-  padding: 350px 48px 100px;
+  padding: 350px 48px 40px;
   @include media(1200px) {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  @include tablet {
+    padding-top: 40vh;
   }
 
   .intro-bg {
@@ -91,8 +94,44 @@
     z-index: 2;
     font-size: rem(64);
     font-weight: 400;
+    line-height: 1.3;
+    @include media(1300px) {
+      font-size: rem(52);
+    }
+    @include tablet {
+      font-size: rem(42);
+    }
+    @include mobile {
+      line-height: 1.25;
+      font-size: rem(32);
+    }
+
     .highlight {
       font-weight: 600;
+    }
+  }
+
+  .intro-sub-txt-grp {
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 35px;
+
+    @include mobile {
+      gap: 1px;
+      margin-top: 20px;
+    }
+
+    .intro-sub-txt {
+      font-size: rem(30);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      @include tablet {
+        font-size: rem(24);
+      }
+
+      @include mobile {
+        font-size: rem(20);
+      }
     }
   }
 }
@@ -292,7 +331,7 @@
       }
 
       .work-content {
-        padding: 24px;
+        padding: 24px 24px 60px;
       }
 
       .work-title {
@@ -312,6 +351,13 @@
           font-size: rem(14);
           line-height: 1.6;
         }
+      }
+
+      .work-links {
+        position: absolute;
+        top: auto;
+        bottom: 24px;
+        left: 24px;
       }
 
       .btn-link {
@@ -447,7 +493,7 @@
 .contact-sec {
   padding: 80px 0 75px;
   @include tablet {
-    padding: 50px 0 40px;
+    padding: 45px 0 40px;
   }
 
   .resume-grp {
@@ -460,7 +506,7 @@
     }
     @include tablet {
       margin: 0;
-      padding: 30px 0 40px;
+      padding: 30px 0 20px;
     }
 
     .line {
@@ -500,6 +546,10 @@
     @include media(1200px) {
       gap: 100px;
     }
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 20px 30px;
+    }
 
     .contact-list {
       .label {
@@ -519,31 +569,44 @@
           font-size: rem(20);
           font-weight: 400;
         }
+        @include mobile {
+          font-size: rem(18);
+          line-height: 22px;
+        }
       }
     }
   }
 }
 
 .resume-sec {
-  background: #3a3a3a;
-  padding: 57px 0 50px;
+  .resume-download-grp {
+    display: block;
+    background: #3a3a3a;
+    padding: 57px 0 50px;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #000;
+    }
+  }
 
   .resume-sub-txt {
-    margin-bottom: 10px;
-    font-size: rem(22);
+    margin-bottom: 5px;
+    font-size: rem(16);
   }
   .resume-title {
-    font-size: rem(54);
+    font-size: rem(30);
   }
 
   .btn-resume-arrow {
     position: absolute;
-    top: 30px;
+    top: 50%;
     right: 30px;
+    transform: translateY(-50%);
     left: auto;
     width: 75px;
     height: 75px;
     border-radius: 100%;
     background-color: #fff;
+    transition: all 0.3s;
   }
 }
