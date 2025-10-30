@@ -28,7 +28,7 @@
           <div class="mo-gnb">Intro</div>
           <div class="mo-gnb">About Me</div>
           <div class="mo-gnb">Work</div>
-          <div class="mo-gnb">Experience & Skills</div>
+          <div class="mo-gnb">Skills</div>
         </div>
 
         <button class="btn btn-hd-contact f-pop f-m f-ws-n">Contact <i class="icon icon-arrow-right"></i></button>
