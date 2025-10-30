@@ -60,7 +60,7 @@
           ></video>
         </div>
         <div class="intro-txt-grp">
-          <p class="intro-title f-b f-wh" data-aos="fade-up">
+          <p class="intro-title f-wh" data-aos="fade-up">
             <span class="highlight">변화하는 웹 퍼블리셔 김현지</span>입니다.
           </p>
         </div>
@@ -283,6 +283,12 @@
 </template>
 
 <script>
+import thumbAmber from '@/assets/images/work/amber_road.png';
+import thumbPossol from '@/assets/images/work/possol.png';
+import thumbPrabbit from '@/assets/images/work/prabbit.png';
+import thumbPocket from '@/assets/images/work/pocket.png';
+import thumbPortfolio from '@/assets/images/work/portfolio.png';
+
 export default {
   name: 'Index',
   props: {
@@ -305,14 +311,14 @@ export default {
             '웨비나, 성공사례 등 신규 페이지 추가 및 리뉴얼 퍼블리싱 전담',
           ],
           url: 'https://xn--9i1b674cwc38r6pa.com/',
-          thumb: '',
+          thumb: thumbPocket,
         },
         {
           title: '프래빗 반응형 웹 퍼블리싱',
           stack: 'HTML5, SCSS, GSAP',
           desc: ['국문/영문 반응형 웹사이트를 2주 내 단독 완성', '다양한 Swiper/GSAP 인터랙션 구현'],
           url: 'https://prabbit.co.kr/',
-          thumb: '',
+          thumb: thumbPrabbit,
         },
         {
           title: '앰버로드 반응형 웹 퍼블리싱',
@@ -323,7 +329,7 @@ export default {
             '높은 완성도로 동일 계열사 추가 의뢰(포솔이노텍)',
           ],
           url: 'https://amberroad.ai/',
-          thumb: '',
+          thumb: thumbAmber,
         },
         {
           title: '포솔이노텍 반응형 웹 퍼블리싱',
@@ -334,15 +340,15 @@ export default {
             '앰버로드 완성도로 동일 계열사 추가 진행',
           ],
           url: 'https://www.possol.kr/',
-          thumb: '',
+          thumb: thumbPossol,
         },
         {
-          title: '자사 포트폴리오 랜딩페이지 퍼블리싱싱',
+          title: '자사 포트폴리오 랜딩페이지 퍼블리싱',
           stack: 'HTML5, SCSS',
           desc: ['포트폴리오 내 일부 프로젝트 퍼블리싱 참여', 'PC/Mobile 반응형 구현'],
           sub1: 'https://portfolio.xn--9i1b674cwc38r6pa.com/golerobotics',
           sub2: 'https://portfolio.xn--9i1b674cwc38r6pa.com/amberroad',
-          thumb: '',
+          thumb: thumbPortfolio,
         },
         {
           title: '자사 CRM (업무 중심형 UI)',
