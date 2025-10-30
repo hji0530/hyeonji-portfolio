@@ -54,7 +54,7 @@
         </div>
         <div class="intro-txt-grp">
           <p class="intro-title f-wh" data-aos="fade-up">
-            완성도를 책임지는 <br class="tab-show" /><span class="highlight">웹 퍼블리셔 김현지</span>입니다.
+            완성도를 책임지는 <br /><span class="highlight">웹 퍼블리셔 김현지</span>입니다.
           </p>
 
           <div class="intro-sub-txt-grp flex">
