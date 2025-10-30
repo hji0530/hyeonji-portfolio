@@ -53,6 +53,12 @@
           <img src="@/assets/images/intro_bg_blurred.png" alt="인트로 배경경 이미지" class="intro-video img-cov" />
         </div>
         <div class="intro-txt-grp">
+          <div class="intro-bubble-txt type-mb f-m f-ws-n f-pop mb-show-ib" data-aos="fade-up">Web Publishing</div>
+          <div class="intro-cont-grp flex" data-aos="fade-up">
+            <div class="intro-bubble-txt f-m f-ws-n f-pop mb-hide">Web Publishing</div>
+            <div class="intro-bubble-txt f-m f-ws-n f-pop">Vue / NUXT</div>
+            <div class="intro-bubble-txt f-m f-ws-n">2년차</div>
+          </div>
           <p class="intro-title f-wh" data-aos="fade-up">
             완성도를 책임지는 <br /><span class="highlight">웹 퍼블리셔 김현지</span>입니다.
           </p>

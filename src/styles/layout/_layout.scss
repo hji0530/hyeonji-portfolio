@@ -48,7 +48,7 @@
     height: 50%;
     background: rgba(#fd6f00, 0.7);
     transition: all 2s;
-    transition-delay: 1s;
+    transition-delay: 0.5s;
   }
 
   &.type-2 {
@@ -65,13 +65,13 @@
   width: 100%;
   min-height: 100vh;
   background: #000;
-  padding: 350px 48px 40px;
+  padding: 29vh 48px 40px;
   @include media(1200px) {
     padding-left: 20px;
     padding-right: 20px;
   }
   @include tablet {
-    padding-top: 40vh;
+    padding-top: 30vh;
   }
 
   .intro-bg {
@@ -82,11 +82,15 @@
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
+    pointer-events: none;
   }
 
   .intro-txt-grp {
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 1472px;
+    margin: 0 auto;
   }
 
   .intro-title {
@@ -113,11 +117,11 @@
   .intro-sub-txt-grp {
     flex-direction: column;
     gap: 3px;
-    margin-top: 35px;
+    margin-top: 42px;
 
     @include mobile {
       gap: 1px;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     .intro-sub-txt {
@@ -133,23 +137,96 @@
       }
     }
   }
+
+  .intro-cont-grp {
+    gap: 8px;
+    margin-bottom: 22px;
+    @include media(1300px) {
+      gap: 5px;
+    }
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  .intro-bubble-txt {
+    display: flex;
+    gap: 8px;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 18px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    font-size: rem(16);
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    cursor: pointer;
+
+    @include media(1300px) {
+      height: 34px;
+      line-height: 34px;
+      padding: 0 14px;
+      font-size: rem(14);
+    }
+
+    @include mobile {
+      height: 28px;
+      line-height: 28px;
+      padding: 0 12px;
+      font-size: rem(12);
+    }
+
+    &.type-mb {
+      @include mobile {
+        margin-bottom: 6px;
+      }
+    }
+
+    &:hover {
+      color: #000;
+      background: #fff;
+    }
+  }
 }
 
 .about-sec {
   background: #000;
 
   .about-inner-grp {
+    position: relative;
     padding: 70px 20px 80px;
     border-radius: 50px 50px 0 0;
     background: #fff;
 
     @include tablet {
-      padding-top: 55px;
+      padding: 55px 20px 40px;
       border-radius: 40px 40px 0 0;
     }
     @include mobile {
-      padding: 40px 20px 50px;
+      padding: 40px 20px 40px;
       border-radius: 30px 30px 0 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        rgba(234, 234, 234, 0) 0%,
+        rgba(234, 234, 234, 0.7) 15%,
+        #eaeaea 50%,
+        rgba(234, 234, 234, 0.7) 85%,
+        rgba(234, 234, 234, 0) 100%
+      );
     }
   }
 
@@ -271,15 +348,16 @@
   background: #000;
 
   .work-inner-grp {
-    padding: 60px 20px 100px;
+    padding: 75px 20px 100px;
     border-radius: 0 0 50px 50px;
     background: #fff;
 
     @include tablet {
-      padding: 10px 20px 50px;
+      padding: 35px 20px 50px;
       border-radius: 0 0 40px 40px;
     }
     @include mobile {
+      padding-top: 25px;
       border-radius: 0 0 30px 30px;
     }
   }
@@ -463,6 +541,8 @@
       height: 80px;
       border-radius: 100%;
       background: #141414;
+      transition: all 0.2s;
+      cursor: default;
       @include tablet {
         width: 60px;
         height: 60px;
@@ -470,6 +550,9 @@
       @include mobile {
         width: 40px;
         height: 40px;
+      }
+      &:hover {
+        transform: translateY(-4px);
       }
 
       .skill-img {
