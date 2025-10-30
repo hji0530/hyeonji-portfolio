@@ -1,37 +1,48 @@
 <template>
   <div>
     <!-- header -->
-    <div class="portfolio-header flex items-c is-active">
+    <div class="portfolio-header flex items-c" :class="{ 'is-show': mobileGnbShow }">
       <div class="hd-inner-grp flex items-c justify-b">
-        <p class="hd-title f-b f-pop f-ws-n p-cursor">HYEONJI FORTFOLIO</p>
-
-        <div class="gnb-list-grp flex tab-hide">
-          <div class="gnb">Intro</div>
-          <div class="gnb">About Me</div>
-          <div class="gnb">Work</div>
-          <div class="gnb">Skills</div>
+        <div class="hd-title f-b f-pop f-ws-n p-cursor" @click="scrollToSection('.intro-sec', true)">
+          HYEONJI FORTFOLIO
         </div>
 
-        <button class="btn btn-hd-contact f-pop f-m f-ws-n tab-hide">
+        <div class="gnb-list-grp flex tab-hide">
+          <div class="gnb" @click="scrollToSection('.intro-sec')">Intro</div>
+          <div class="gnb" @click="scrollToSection('.about-sec')">About Me</div>
+          <div class="gnb" @click="scrollToSection('.work-sec')">Work</div>
+          <div class="gnb" @click="scrollToSection('.skills-sec')">Skills</div>
+        </div>
+
+        <button class="btn btn-hd-contact f-pop f-m f-ws-n tab-hide" @click="scrollToSection('.contact-sec')">
           Contact <i class="icon icon-arrow-right"></i>
         </button>
 
-        <button class="btn hamburger tab-show-flex">
+        <button
+          class="btn hamburger tab-show-flex"
+          :class="{ 'is-active': mobileGnbShow }"
+          @click="toggleMobileGnb"
+          aria-label="모바일 메뉴"
+          :aria-expanded="mobileGnbShow"
+        >
           <span class="bar bar-top"></span>
           <span class="bar bar-mid"></span>
           <span class="bar bar-bot"></span>
         </button>
       </div>
 
+      <!-- 모바일 메뉴 -->
       <div class="mo-hd-grp">
         <div class="mo-gnb-list-grp">
-          <div class="mo-gnb">Intro</div>
-          <div class="mo-gnb">About Me</div>
-          <div class="mo-gnb">Work</div>
-          <div class="mo-gnb">Skills</div>
+          <div class="mo-gnb" @click="scrollToSection('.intro-sec', true)">Intro</div>
+          <div class="mo-gnb" @click="scrollToSection('.about-sec', true)">About Me</div>
+          <div class="mo-gnb" @click="scrollToSection('.work-sec', true)">Work</div>
+          <div class="mo-gnb" @click="scrollToSection('.skills-sec', true)">Skills</div>
         </div>
 
-        <button class="btn btn-hd-contact f-pop f-m f-ws-n">Contact <i class="icon icon-arrow-right"></i></button>
+        <button class="btn btn-hd-contact f-pop f-m f-ws-n" @click="scrollToSection('.contact-sec', true)">
+          Contact <i class="icon icon-arrow-right"></i>
+        </button>
       </div>
     </div>
     <!-- END header -->
@@ -240,7 +251,12 @@
           </p>
           <div class="resume-grp">
             <div class="line"></div>
-            <button class="btn btn-resume f-wh f-s ani-dongdong hover-effect tab-hide">이력서 다운로드</button>
+            <a
+              :href="resumeUrl"
+              download="김현지_웹퍼블리셔_이력서.pdf"
+              class="btn btn-resume f-wh f-s ani-dongdong hover-effect tab-hide"
+              >이력서 다운로드</a
+            >
           </div>
           <div class="contact-list-grp flex items-c">
             <div class="contact-list" data-aos="fade-up">
@@ -347,15 +363,56 @@ export default {
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll);
   },
+  computed: {
+    resumeUrl() {
+      const file = 'resume/김현지_웹퍼블리셔_이력서.pdf';
+      return encodeURI(process.env.BASE_URL + file);
+    },
+  },
   methods: {
     handleScroll() {
       const header = document.querySelector('.portfolio-header');
       const scrollTop = window.scrollY;
-      if (scrollTop != 0) {
-        header.classList.add('is-active');
-      } else {
-        header.classList.remove('is-active');
-      }
+      if (scrollTop !== 0) header.classList.add('is-active');
+      else header.classList.remove('is-active');
+    },
+
+    // 햄버거 토글
+    toggleMobileGnb() {
+      this.mobileGnbShow = !this.mobileGnbShow;
+      // 바디 스크롤 잠금/해제 (선택적)
+      document.body.classList.toggle('is-show', this.mobileGnbShow);
+    },
+
+    // 모바일 GNB 닫기(외부에서 호출)
+    closeMobileGnb() {
+      this.mobileGnbShow = false;
+      document.body.classList.remove('is-show');
+    },
+
+    // 공용 스크롤 (모바일에서 호출 시 메뉴 닫기)
+    scrollToSection(selector, isMobile = false) {
+      const target = document.querySelector(selector);
+      if (!target) return;
+
+      const header = document.querySelector('.portfolio-header');
+      const headerH = header ? header.offsetHeight : 0;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - headerH;
+
+      window.scrollTo({ top, behavior: 'smooth' });
+
+      if (isMobile) this.closeMobileGnb();
+    },
+
+    // 이력서 다운로드
+    downloadResume() {
+      const a = document.createElement('a');
+      a.href = this.resumeUrl;
+      a.setAttribute('download', '김현지_웹퍼블리셔_이력서.pdf'); // 저장 파일명
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
     },
   },
 };
