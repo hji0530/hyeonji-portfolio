@@ -81,7 +81,7 @@
           </div>
           <p class="sub-txt f-bk f-r f-center" data-aos="fade-up" data-aos-delay="100">
             안녕하세요! 저는 <span class="highlight type-2">변화하는 웹 퍼블리셔 김현지</span>입니다.<br />
-            현실에 안주하지 않고, <br class="mb-show" />모두가 함께 함께 성장하는 것을 지양합니다. <br />
+            현실에 안주하지 않고, <br class="mb-show" />모두와 함께 성장하는 것을 지향합니다. <br />
             친절함과 즐거움 속에서 함께 성장해 나가고 싶습니다.
           </p>
 
