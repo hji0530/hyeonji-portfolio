@@ -116,24 +116,41 @@
 
   .intro-sub-txt-grp {
     flex-direction: column;
-    gap: 3px;
+    gap: 14px;
     margin-top: 42px;
 
     @include mobile {
-      gap: 1px;
+      gap: 10px;
       margin-top: 30px;
     }
 
     .intro-sub-txt {
+      position: relative;
+      padding-left: 22px;
       font-size: rem(30);
       color: #fff;
-      font-family: 'Poppins', sans-serif;
+      //font-family: 'Poppins', sans-serif;
+      line-height: 1.38;
       @include tablet {
         font-size: rem(24);
       }
 
       @include mobile {
+        padding-left: 15px;
         font-size: rem(20);
+        line-height: 1.4;
+      }
+
+      &::before {
+        content: '*';
+        position: absolute;
+        left: 0;
+        font-size: rem(30);
+        font-weight: 700;
+        color: #fff;
+        @include mobile {
+          font-size: rem(22);
+        }
       }
     }
   }
