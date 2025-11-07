@@ -57,7 +57,7 @@
           <div class="intro-cont-grp flex" data-aos="fade-up">
             <div class="intro-bubble-txt f-m f-ws-n f-pop mb-hide">Web Publishing</div>
             <div class="intro-bubble-txt f-m f-ws-n f-pop">Vue / NUXT</div>
-            <div class="intro-bubble-txt f-m f-ws-n">2년차</div>
+            <div class="intro-bubble-txt f-m f-ws-n">3년차</div>
           </div>
           <p class="intro-title f-wh" data-aos="fade-up">
             완성도를 책임지는 <br /><span class="highlight">웹 퍼블리셔 김현지</span>입니다.
@@ -139,6 +139,13 @@
                   <a v-if="item.sub2" :href="item.sub2" target="_blank" class="btn btn-link hover-effect"
                     >Sub2 <i class="icon icon-arrow-diagonal"></i
                   ></a>
+                  <button
+                    v-if="item.title === '자사 CRM (업무 중심형 UI)'"
+                    class="btn btn-link hover-effect"
+                    @click="openCrmModal"
+                  >
+                    프로젝트 화면 보기 <i class="icon icon-arrow-diagonal"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -298,6 +305,37 @@
         </a>
       </div>
     </div>
+
+    <!-- 모달 -->
+    <div class="modal-wrapper" :class="{ 'is-show': isCrmModalShow }">
+      <span class="bg-cover" @click="closeCrmModal">
+        <button class="btn tech-modal-close-btn pos-a">
+          <i class="icon icon-modal-close-wh" />
+        </button>
+      </span>
+      <div class="modal crm-modal">
+        <div class="modal-inner-wrap">
+          <div class="btn modal-close-btn flex" @click="closeCrmModal">
+            <p class="close-tt f-wh f-r tab-show">닫기</p>
+            <i class="icon icon-modal-close2" />
+          </div>
+          <div class="crm-modal-scroll">
+            <p class="crm-modal-ttl f-b f-bk">자사 CRM (업무 중심형 UI)</p>
+            <p class="crm-modal-sub-ttl f-m">※ 아래 이미지는 테스트 서버의 더미 데이터를 기반으로 캡처한 화면입니다.</p>
+            <ul class="m-crm-list-wrap flex">
+              <li v-for="(item, list) in crm_img_card" :key="list" class="m-crm-list">
+                <div class="prd-img-grp">
+                  <div class="img-grp">
+                    <img :src="item.img" alt="product" class="img img-con" />
+                  </div>
+                </div>
+                <p class="m-crm-name f-b f-bk" v-html="item.name" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -321,6 +359,7 @@ export default {
     return {
       mobileGnbShow: false,
       scrolled: false,
+      isCrmModalShow: false,
 
       projects: [
         {
@@ -381,6 +420,40 @@ export default {
           thumb: thumbCrm,
         },
       ],
+      crm_img_card: [
+        {
+          img: require('@/assets/images/crm/CRM_test서버_프로젝트_리뉴얼_TM.png'),
+          name: '프로젝트 리뉴얼 TM',
+        },
+        {
+          img: require('@/assets/images/crm/CRM_test서버_프로젝트_리뉴얼_가이드.png'),
+          name: '프로젝트 리뉴얼 가이드',
+        },
+        {
+          img: require('@/assets/images/crm/CRM_test서버_자료실.png'),
+          name: '프로젝트 자료실',
+        },
+        {
+          img: require('@/assets/images/crm/CRM_test서버_자료실_파일업로드.png'),
+          name: '프로젝트 자료실 파일업로드',
+        },
+        {
+          img: require('@/assets/images/crm/CRM_test서버_견적서 생성.png'),
+          name: '프로젝트 견적서 생성',
+        },
+        {
+          img: require('@/assets/images/crm/CRM_test서버_견적서 생성2.png'),
+          name: '프로젝트 견적서 생성 2',
+        },
+        {
+          img: require('@/assets/images/crm/CRM_test서버_웨비나_어드민_목록.png'),
+          name: '어드민 웨비나 목록',
+        },
+        {
+          img: require('@/assets/images/crm/CRM_test서버_웨비나_어드민_상세.png'),
+          name: '어드민 웨비나 상세',
+        },
+      ],
     };
   },
   mounted() {
@@ -439,6 +512,17 @@ export default {
       document.body.appendChild(a);
       a.click();
       a.remove();
+    },
+
+    openCrmModal() {
+      this.isCrmModalShow = true;
+      document.body.classList.add('is-show');
+      document.documentElement.classList.add('is-show');
+    },
+    closeCrmModal() {
+      this.isCrmModalShow = false;
+      document.body.classList.remove('is-show');
+      document.documentElement.classList.remove('is-show');
     },
   },
 };
