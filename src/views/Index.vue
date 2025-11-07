@@ -473,7 +473,7 @@ export default {
       return encodeURI(process.env.BASE_URL + 'resume/김현지_웹퍼블리셔_이력서.pdf');
     },
     careerUrl() {
-      return encodeURI(process.env.BASE_URL + 'resume/경력기술서_김현지.pdf');
+      return encodeURI(process.env.BASE_URL + 'resume/김현지_경력기술서.pdf');
     },
   },
   methods: {
