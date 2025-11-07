@@ -66,8 +66,8 @@
           <div class="intro-sub-txt-grp flex">
             <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="100">Vue3 Nuxt 기반 반응형 실무경험 풍부</p>
             <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="150">
-              1년간 팀 내 유일한 퍼블리셔로 <br class="tab-show" />자사·외주 프로젝트 전체 퍼블리싱
-              <span class="highlight type-2">단독 진행</span>
+              1년간 팀 내 단독 퍼블리셔로 <br class="tab-show" />자사·외주 프로젝트 전체 퍼블리싱
+              <span class="highlight type-2">100% 진행</span>
             </p>
             <!-- <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="200">${Communication skills}</p>
             <p class="intro-sub-txt" data-aos="fade-up" data-aos-delay="250">${Problem-solving skills}</p> -->
