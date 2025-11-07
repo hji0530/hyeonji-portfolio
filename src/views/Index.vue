@@ -257,28 +257,34 @@
       <!-- CONTACT -->
       <div class="contact-sec">
         <div class="xl-center">
-          <div class="contact-top-grp flex">
-            <div class="left" data-aos="fade-up">
-              <div class="contact-img-grp pos-r">
-                <img src="@/assets/images/khj_img.jpg" alt="img" class="img img-con" />
+          <div class="contact-top-grp pos-r">
+            <div class="contact-top-inner-grp flex">
+              <div class="left" data-aos="fade-up">
+                <div class="contact-img-grp pos-r">
+                  <img src="@/assets/images/khj_img.jpg" alt="img" class="img img-con" />
+                </div>
+              </div>
+              <div class="right" data-aos="fade-up" data-aos-delay="100">
+                <p class="top-title f-bk f-b f-pop">Contact</p>
+                <p class="sub-txt f-bk f-r">
+                  끝까지 저의 포트폴리오를 관심있게 봐주셔서 감사합니다.<br />
+                  저와 나누고 싶으신 말씀이 있으시다면 언제든 연락 주세요!
+                </p>
               </div>
             </div>
-            <div class="right" data-aos="fade-up" data-aos-delay="100">
-              <p class="top-title f-bk f-b f-pop">Contact</p>
-              <p class="sub-txt f-bk f-r">
-                끝까지 저의 포트폴리오를 관심있게 봐주셔서 감사합니다.<br />
-                저와 나누고 싶으신 말씀이 있으시다면 언제든 연락 주세요!
-              </p>
+
+            <div class="resume-btn-grp flex items-c">
+              <a :href="resumeUrl" download="김현지_웹퍼블리셔_이력서.pdf" class="btn btn-resume hover-effect">
+                이력서 다운로드
+              </a>
+
+              <a :href="careerUrl" download="김현지_경력기술서.pdf" class="btn btn-career hover-effect"
+                >경력기술서 다운로드</a
+              >
             </div>
           </div>
           <div class="resume-grp">
             <div class="line"></div>
-            <a
-              :href="resumeUrl"
-              download="김현지_웹퍼블리셔_이력서.pdf"
-              class="btn btn-resume f-wh f-s ani-dongdong hover-effect tab-hide"
-              >이력서 다운로드</a
-            >
           </div>
           <div class="contact-list-grp flex items-c">
             <div class="contact-list">
@@ -293,7 +299,7 @@
         </div>
       </div>
 
-      <div class="resume-sec tab-show pos-r">
+      <!-- <div class="resume-sec tab-show pos-r">
         <a :href="resumeUrl" download="김현지_웹퍼블리셔_이력서.pdf" class="resume-download-grp">
           <div class="xl-center">
             <p class="resume-sub-txt f-wh f-r f-pop">RESUME DOWNLOAD</p>
@@ -303,7 +309,7 @@
             </div>
           </div>
         </a>
-      </div>
+      </div> -->
     </div>
 
     <!-- 모달 -->
@@ -464,8 +470,10 @@ export default {
   },
   computed: {
     resumeUrl() {
-      const file = 'resume/김현지_웹퍼블리셔_이력서.pdf';
-      return encodeURI(process.env.BASE_URL + file);
+      return encodeURI(process.env.BASE_URL + 'resume/김현지_웹퍼블리셔_이력서.pdf');
+    },
+    careerUrl() {
+      return encodeURI(process.env.BASE_URL + 'resume/경력기술서_김현지.pdf');
     },
   },
   methods: {
@@ -504,14 +512,20 @@ export default {
     },
 
     // 이력서 다운로드
-    downloadResume() {
+    downloadFile(url, filename) {
       const a = document.createElement('a');
-      a.href = this.resumeUrl;
-      a.setAttribute('download', '김현지_웹퍼블리셔_이력서.pdf'); // 저장 파일명
+      a.href = url;
+      a.setAttribute('download', filename);
       a.style.display = 'none';
       document.body.appendChild(a);
       a.click();
       a.remove();
+    },
+    downloadResume() {
+      this.downloadFile(this.resumeUrl, '김현지_웹퍼블리셔_이력서.pdf');
+    },
+    downloadCareer() {
+      this.downloadFile(this.careerUrl, '김현지_경력기술서.pdf');
     },
 
     openCrmModal() {
