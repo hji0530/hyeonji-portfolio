@@ -83,9 +83,16 @@
             <img src="@/assets/images/img_emoticon_01.png" alt="이모티콘 이미지" class="emoticon-img" />
           </div>
           <p class="sub-txt f-bk f-r f-center" data-aos="fade-up" data-aos-delay="100">
-            안녕하세요! 저는 <span class="highlight type-2">변화하는 웹 퍼블리셔 김현지</span>입니다.<br />
-            현실에 안주하지 않고, <br class="mb-show" />모두와 함께 성장하는 것을 지향합니다. <br />
-            친절함과 즐거움 속에서 함께 성장해 나가고 싶습니다.
+            안녕하세요! <br class="mb-show" />저는
+            <span class="highlight type-2">변화하는 웹 퍼블리셔 김현지</span>입니다.<br />
+            현실에 안주하지 않고, <br class="mb-show" />더 나은 구조와 코드를 고민하며 성장하고 있습니다.<br /><span
+              class="space"
+            ></span>
+            <span class="highlight type-2">Vue2에서 Vue3 + Nuxt로 마이그레이션</span> 할 때
+            <br class="mb-show" />퍼블리싱 환경 세팅을 담당했으며,<br /><span class="space-mb"></span> 1년간
+            <span class="highlight type-2">팀 내 유일한 퍼블리셔</span>로 <br class="mb-show" />자사와 외주 프로젝트를
+            책임감 있게 완수했습니다. <br /><span class="space"></span>친절함과 즐거움 속에서 협업하며,
+            <br class="mb-show" />함께 성장해 나가고 싶습니다.
           </p>
 
           <div class="about-list-grp flex" data-aos="fade-up">
