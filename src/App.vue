@@ -18,7 +18,6 @@ export default {
         easing: 'ease-out',
         offset: 100,
       });
-      console.log('AOS initialized ✅');
     });
   },
   watch: {
