@@ -487,6 +487,11 @@
         li {
           font-size: rem(14);
           line-height: 1.6;
+
+          .point-txt {
+            color: #fd6f00;
+            font-weight: 700;
+          }
         }
       }
 
@@ -495,13 +500,15 @@
         top: auto;
         bottom: 24px;
         left: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 10px;
       }
 
       .btn-link {
         display: inline-flex;
         align-items: center;
         height: 36px;
-        margin-right: 10px;
         padding: 0 15px 1px;
         background: #fd6f00;
         font-size: rem(14);

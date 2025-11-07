@@ -137,17 +137,23 @@
                 <h3 class="work-title">{{ item.title }}</h3>
                 <p class="work-stack">{{ item.stack }}</p>
                 <ul class="work-desc">
-                  <li v-for="desc in item.desc" :key="desc">{{ desc }}</li>
+                  <li v-for="(desc, idx) in item.desc" :key="idx" v-html="desc"></li>
                 </ul>
                 <div class="work-links">
-                  <a v-if="item.url" :href="item.url" target="_blank" class="btn btn-link hover-effect"
+                  <a v-if="item.url" :href="item.url" target="_blank" class="btn btn-link hover-effect f-pop"
                     >Website <i class="icon icon-arrow-diagonal"></i
                   ></a>
-                  <a v-if="item.sub1" :href="item.sub1" target="_blank" class="btn btn-link hover-effect"
+                  <a v-if="item.sub1" :href="item.sub1" target="_blank" class="btn btn-link hover-effect f-pop"
                     >Sub1 <i class="icon icon-arrow-diagonal"></i
                   ></a>
-                  <a v-if="item.sub2" :href="item.sub2" target="_blank" class="btn btn-link hover-effect"
+                  <a v-if="item.sub2" :href="item.sub2" target="_blank" class="btn btn-link hover-effect f-pop"
                     >Sub2 <i class="icon icon-arrow-diagonal"></i
+                  ></a>
+                  <a v-if="item.sub3" :href="item.sub3" target="_blank" class="btn btn-link hover-effect f-pop"
+                    >Sub3 <i class="icon icon-arrow-diagonal"></i
+                  ></a>
+                  <a v-if="item.sub4" :href="item.sub4" target="_blank" class="btn btn-link hover-effect"
+                    >Sub4 <i class="icon icon-arrow-diagonal"></i
                   ></a>
                   <button
                     v-if="item.title === '자사 CRM (업무 중심형 UI)'"
@@ -383,7 +389,7 @@ export default {
           stack: 'Vue3, Nuxt, SCSS, HTML',
           desc: [
             'Vue2 기반 홈페이지를 Vue3 + Nuxt로 마이그레이션하며 SCSS 퍼블 구조 세팅 및 컴포넌트 정리 담당',
-            '신규 페이지 추가 및 리뉴얼 퍼블리싱 전담',
+            '신규 페이지 추가 및 리뉴얼 <span class="point-txt">퍼블리싱 100% 전담</span>',
           ],
           url: 'https://xn--9i1b674cwc38r6pa.com/',
           thumb: thumbPocket,
@@ -391,7 +397,11 @@ export default {
         {
           title: '프래빗 반응형 웹 퍼블리싱',
           stack: 'HTML5, SCSS, GSAP',
-          desc: ['국문/영문 반응형 웹사이트를 2주 내 단독 완성', '다양한 Swiper/GSAP 인터랙션 구현'],
+          desc: [
+            '<span class="point-txt">기여도: 100%</span>',
+            '국문/영문 반응형 웹사이트를 <span class="point-txt">2주 내 단독</span> 완성',
+            '다양한 Swiper/GSAP 인터랙션 구현',
+          ],
           url: 'https://prabbit.co.kr/',
           thumb: thumbPrabbit,
         },
@@ -399,7 +409,7 @@ export default {
           title: '앰버로드 반응형 웹 퍼블리싱',
           stack: 'Vue2, SCSS',
           desc: [
-            '초기 70% 담당, 리뉴얼 100% 단독 진행',
+            '<span class="point-txt">초기 70% 담당, 리뉴얼 100%</span> 단독 진행',
             '반응형 및 주요 인터랙션 구현',
             '높은 완성도로 동일 계열사 추가 의뢰(포솔이노텍)',
           ],
@@ -410,7 +420,7 @@ export default {
           title: '포솔이노텍 반응형 웹 퍼블리싱',
           stack: 'Vue2, SCSS',
           desc: [
-            '한국어 80%, 영문 100% 퍼블리싱 담당',
+            '<span class="point-txt">한국어 80%, 영문 100%</span> 퍼블리싱 담당',
             'PC/Mobile 반응형 구현',
             '앰버로드 완성도로 동일 계열사 추가 진행',
           ],
@@ -420,9 +430,11 @@ export default {
         {
           title: '자사 포트폴리오 랜딩페이지 퍼블리싱',
           stack: 'HTML5, SCSS',
-          desc: ['포트폴리오 내 일부 프로젝트 퍼블리싱 참여', 'PC/Mobile 반응형 구현'],
+          desc: ['<span class="point-txt">기여도: 100%</span>', 'PC/Mobile 반응형 구현'],
           sub1: 'https://portfolio.xn--9i1b674cwc38r6pa.com/golerobotics',
           sub2: 'https://portfolio.xn--9i1b674cwc38r6pa.com/amberroad',
+          sub3: 'https://portfolio.xn--9i1b674cwc38r6pa.com/t-order',
+          sub4: 'https://portfolio.xn--9i1b674cwc38r6pa.com/jjaggae',
           thumb: thumbPortfolio,
         },
         {
@@ -430,7 +442,8 @@ export default {
           stack: 'Vue2, SCSS, Tailwind',
           desc: [
             '기존 비반응형 페이지를 반응형으로 전환',
-            '자료실, 단체 메일 전송, 웨비나 등 신규 페이지 퍼블리싱',
+            '자료실, 단체 메일 전송, 웨비나 등 신규 페이지',
+            '<span class="point-txt">퍼블리싱 100% 전담</span>',
             '프론트엔드 개발자와 GitLab 협업 진행',
           ],
           thumb: thumbCrm,
